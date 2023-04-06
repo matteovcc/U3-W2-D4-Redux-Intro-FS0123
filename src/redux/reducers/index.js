@@ -20,7 +20,7 @@ const mainReducer = (state = initialState, action) => {
         favourites: {
           ...state.favourites,
           content: state.favourites.content.filter(
-            (_, i) => i !== action.payload
+            (parametroInutile, i) => i !== action.payload
           ),
         },
       };
