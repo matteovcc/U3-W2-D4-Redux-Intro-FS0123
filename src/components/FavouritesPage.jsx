@@ -5,11 +5,17 @@ const FavouritesPage = () => {
   const favourites = useSelector((state) => state.favourites.content);
   return (
     <>
-      <Container className="mx-auto mt-3 text-danger">
+      <Container className="my-5">
         <h1>I tuoi preferiti</h1>
         <ol>
           {favourites.map((favorito, index) => (
-            <li key={`favorito-${index}`}>{favorito.company_name}</li>
+            <>
+              <li className="" key={`favorito-${index}`}>
+                <strong>{favorito.company_name}</strong>
+              </li>
+              <span className="ms-auto">Job Application: {favorito.title}</span>
+              <p>Location: {favorito.candidate_required_location}</p>
+            </>
           ))}
         </ol>
       </Container>
